@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arenas - Clash Royale Hub</title>
+    <style>
+        @import url('https://googleapis.com');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f1c3f 0%, #060b1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 3rem;
+            color: #ffca18;
+            text-shadow: 3px 3px 0px #c1121f, 5px 5px 0px #000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #93c5fd;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .btn-voltar {
+            font-family: 'Luckiest Guy', cursive;
+            background: #c1121f;
+            color: white;
+            border: none;
+            border-bottom: 4px solid #780016;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1rem;
+            display: inline-block;
+            margin-bottom: 30px;
+            transition: all 0.1s ease;
+        }
+
+        .btn-voltar:active {
+            transform: translateY(2px);
+            border-bottom-width: 2px;
+        }
+
+        /* Grid de Cards das Arenas */
+        .arenas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1200px;
+            padding: 10px;
+        }
+
+        /* Estilo do Card Individual */
+        .arena-card {
+            background: #1e293b;
+            border: 4px solid #475569;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .arena-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffca18;
+        }
+
+        /* Espaço para Imagem da Arena */
+        .arena-image-container {
+            width: 100%;
+            height: 150px;
+            background-color: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 4px solid #475569;
+            position: relative;
+        }
+
+        .arena-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-placeholder {
+            position: absolute;
+            color: #475569;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+
+        /* Informações do Card */
+        .arena-info {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .arena-number {
+            font-size: 0.9rem;
+            color: #60a5fa;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .arena-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trophy-count {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 1.3rem;
+            color: #facc15;
+            text-shadow: 2px 2px 0px #000;
+            background: #0f172a;
+            padding: 8px;
+            border-radius: 10px;
+            border: 2px solid #334155;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="btn-voltar">← Voltar Início</a>
+
+    <header>
+        <h1>Todas as Arenas (1 a 24)</h1>
+        <p class="subtitle">A jornada completa da Estrada dos Troféus</p>
+    </header>
+
+    <main class="arenas-grid">
+        <!-- Arena 1 -->
+        <div class="arena-card">
+            <div class="arena-image-container">
+                <span class="image-placeholder">[ Sem Imagem ]</span>
+                <img src="arena1.png" alt="Estádio Goblin" class="arena-img" onerror="this.style.display='none'">
+            </div>
+            <div class="arena-info">
+                <div>
+                    <div class="arena-number">Arena 1</div>
+                    <div class="arena-name">Estádio Goblin</div>
+                </div>
+                <div class="trophy-count">0 - 300 🏆</div>
+            </div>
+        </div>
+
+        <!-- Arena 2 -->
+        <div class="arena-card">
+            <div class="arena-image-container">
+                <span class="image-placeholder">[ Sem Imagem ]</span>
+                <img src="arena2.png" alt="Fosso dos Ossos" class="arena-img" onerror="this.style.display='none'">
+            </div>
+            <div class="arena-info">
+                <div>
+                    <div class="arena-number">Arena 2</div>
+                    <div class="arena-name">Fosso dos Ossos</div>
+                </div>
+                <div class="trophy-count">300 - 600 🏆</div>
+            </div>
+        </div>
+
+        <!-- Arena 3 -->
+        <div class="arena-card">
+            <div class="arena-image-container">
+                <span class="image-placeholder">[ Sem Imagem ]</span>
+                <img src="arena3.png" alt="Torneio Bárbaro" class="arena-img" onerror="this.style.display='none'">
+            </div>
+            <div class="arena-info">
+                <div>
+                    <div class="arena-number">Arena 3</div>
+                    <div class="arena-name">Torneio Bárbaro</div>
+                </div>
+                <div class="trophy-count">600 - 1.000 🏆</div>
+            </div>
+        </div>
+
+        <!-- Arena 4 -->
+        <div class="arena-card">
+            <div class="arena-image-container">
+                <span class="image-placeholder">[ Sem Imagem ]</span>
+                <img src="arena4.png" alt="Vale dos Feitiços" class="arena-img" onerror="this.style.display='none'">
+            </div>
+            <div class="arena-info">
+                <div>
+                    <div class="arena-number">Arena 4</div>
+                    <div class="arena-name">Vale dos Feitiços</div>
+                </div>
+                <div class="trophy-count">1.000 - 1.300 🏆</div>
+            </div>
+        </div>
+
+        <!-- Arena 5 -->
+        <div class="arena-card">
+            <div class="arena-image-container">
+                <span class="image-placeholder">[ Sem Imagem ]</span>
+                <img src="arena5.png" alt="Oficina do Construtor" class="arena-img" onerror="this.style.display='none'">
+            </div>
+            <div class="arena-info">
+                <div>
+                    <div class="arena-number">Arena 5</div>
+                    <div class="arena-name">Oficina do Construtor</div>
+                </div>
+                <div class="trophy-count">1.300 - 1.600 🏆</div>
+            </div>
+        </div>
+
+        <!-- Arena 6 -->
+        <div class="arena-card">
+            <div class="arena-image-container">
+                <span class="image-placeholder">[ Sem Imagem ]</span>
+                <img src="arena6.png" alt="Parquinho da P.E.K.K.A." class="arena-img" onerror="this.style.display='none'">
+            </div>
+            <div class="arena-info">
+                <div>
+                    <div class="arena-number">Arena 6</div>
+                    <div class="arena-name">Parquinho da P.E.K.K.A.</div>
+                </div>
+                <div class="trophy-count">1.600 - 2.000 🏆</div>
+            </div>
+        </div>
+
+        <!-- Arena 7 -->
+        <div class="arena-card">
+            <div class="arena-image-container">
+                <span class="image-placeholder">[ Sem Imagem ]</span>
+                <img src="arena7.png" alt="Arena Real" class="arena-img" onerror="this.style.display='none'">
+            </div>
+            <div class="arena-info">
+                <div>
+                    <div class="arena-number">Arena 7</div>
+                    <div class="arena-name">Arena Real</div>
+                </div>
+                <div class="trophy-count">2.000 - 2.300 🏆</div>
+            </div>
+        </div>
+
+        <!-- Arena 8 -->
+        <div class="arena-card">
+            <div class="arena-image-container">
+                <span class="image-placeholder">[ Sem Imagem ]</span>
+                <img src="arena8.png" alt="Pico Congelado" class="arena-img" onerror="this.style.display='none'">
+            </div>
+            <div class="arena-info">
+                <div>
+                    <div class="arena-number">Arena 8</div>
+                    <div class="arena-name">Pico Congelado</div>
+                </div>
+                <div class="trophy-count">2.300 - 2.600 🏆</div>
+            </div>
+        </div>
+
+        <!-- Arena 9 -->
+        <div class="arena-card">
+            <div class="arena-image-container">
+                <span class="image-placeholder">[ Sem Imagem ]</span>
+                <img src="arena9.png" alt="Arena da Selva" class="arena-img" onerror="this.style.display='none'">
