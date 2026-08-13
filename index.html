@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash Royale Hub</title>
+    <style>
+        /* Importação da fonte estilo gamer/cartum */
+        @import url('https://googleapis.com');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f1c3f 0%, #060b1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Fundo com efeito de luzes que remete ao jogo */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(234, 179, 8, 0.05) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 3.5rem;
+            color: #ffca18;
+            text-shadow: 4px 4px 0px #c1121f, 7px 7px 0px #000;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #93c5fd;
+            margin-top: 10px;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        /* Container dos Cards de Navegação */
+        .nav-container {
+            display: flex;
+            gap: 30px;
+            width: 100%;
+            max-width: 800px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Estilo dos Cards (Páginas para Clicar) */
+        .card {
+            background: #1e293b;
+            border: 4px solid #475569;
+            border-radius: 20px;
+            width: 280px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 250px;
+        }
+
+        /* Efeito Hover nos Cards */
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #ffca18;
+            box-shadow: 0 15px 30px rgba(255, 202, 24, 0.2), 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-title {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 2.2rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 0px #000;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        /* Botão "Ver" estilo Clash Royale (Dourado/Amarelo com borda) */
+        .btn-ver {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 1.3rem;
+            background: linear-gradient(to bottom, #ffeb3b 0%, #ffc107 100%);
+            border: none;
+            border-bottom: 5px solid #e65100;
+            border-radius: 10px;
+            color: #ffffff;
+            padding: 10px 35px;
+            cursor: pointer;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: all 0.1s ease;
+            width: 80%;
+        }
+
+        /* Efeito de clique do botão físico */
+        .card:hover .btn-ver {
+            background: linear-gradient(to bottom, #ffee58 0%, #ffca28 100%);
+        }
+
+        .btn-ver:active {
+            transform: translateY(3px);
+            border-bottom-width: 2px;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+        }
+
+        /* Ajuste Responsivo para Celulares */
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .nav-container {
+                gap: 20px;
+            }
+            .card {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Clash Royale</h1>
+        <p>Explore o universo das arenas e batalhas</p>
+    </header>
+
+    <main class="nav-container">
+        <!-- Card 1: Cartas -->
+        <div class="card" onclick="location.href='#cartas'">
+            <div class="card-title">Cartas</div>
+            <button class="btn-ver">Ver</button>
+        </div>
+
+        <!-- Card 2: Arenas -->
+        <div class="card" onclick="location.href='#arenas'">
+            <div class="card-title">Arenas</div>
+            <button class="btn-ver">Ver</button>
+        </div>
+    </main>
+
+</body>
+</html>
