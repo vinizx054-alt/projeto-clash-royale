@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiki Clash Royale</title>
+  <!-- Importa o CSS de bonita do site -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= TELA 1: MENU PRINCIPAL ================= -->
+  <div id="tela-menu" class="tela ativa">
+    <h1>Clash Royale Wiki</h1>
+    <p>Selecione uma opção para visualizar o conteúdo:</p>
+
+    <div class="menu-cards">
+      <!-- Card Cartas -->
+      <div class="card-menu" onclick="navegarPara('tela-cartas')">
+        <div style="font-size: 2.5rem;">📦</div>
+        <h2>Ver Cartas</h2>
+        <p>Acesse todas as cartas da API do jogo</p>
+      </div>
+
+      <!-- Card Arenas -->
+      <div class="card-menu" onclick="navegarPara('tela-arenas')">
+        <div style="font-size: 2.5rem;">🏟️</div>
+        <h2>Ver Arenas</h2>
+        <p>Explore as arenas do Clash Royale</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= TELA 2: CARTAS ================= -->
+  <div id="tela-cartas" class="tela">
+    <h1>Baú de Cartas</h1>
+    
+    <div class="top-bar">
+      <button class="btn-voltar" onclick="navegarPara('tela-menu')">← Voltar ao Menu</button>
+      <input type="text" id="input-busca" class="input-busca" placeholder="🔎 Buscar por nome...">
+    </div>
+
+    <div id="cartas-container" class="container"></div>
+  </div>
+
+
+  <!-- ================= TELA 3: ARENAS ================= -->
+  <div id="tela-arenas" class="tela">
+    <h1>Arenas do Clash Royale</h1>
+
+    <div class="top-bar">
+      <button class="btn-voltar" onclick="navegarPara('tela-menu')">← Voltar ao Menu</button>
+    </div>
+
+    <div id="arenas-container" class="container">
+      <p>Carregando Arenas...</p>
+    </div>
+  </div>
+
+  <!-- Importa o Script com a lógica e os dados -->
+  <script src="script.js"></script>
+</body>
+</html>
