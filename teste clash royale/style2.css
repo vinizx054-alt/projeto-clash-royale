@@ -1,0 +1,107 @@
+:root {
+    --cr-dark: #0f1c3f;
+    --cr-gold: #ffcc00;
+    --cr-card: #253b74;
+    --cr-border: #3d5a9c;
+    --cr-text-muted: #a0b2d6;
+    --cr-id: #6885c4;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--cr-dark);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+header { 
+    text-align: center; 
+    margin-bottom: 30px; 
+}
+
+header h1 { 
+    color: var(--cr-gold); 
+    text-transform: uppercase; 
+    margin-bottom: 5px; 
+    letter-spacing: 1px;
+}
+
+header p {
+    color: var(--cr-text-muted); 
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.arena-card {
+    background: linear-gradient(135deg, var(--cr-card), #162447);
+    border: 3px solid var(--cr-border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito sutil de hover para dar vida ao site */
+.arena-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 204, 0, 0.2);
+}
+
+.arena-id { 
+    position: absolute; 
+    top: 10px; 
+    left: 15px; 
+    color: var(--cr-id); 
+    font-weight: bold; 
+}
+
+.arena-name { 
+    font-size: 1.3rem; 
+    font-weight: bold; 
+    margin: 15px 0 8px 0; 
+}
+
+.trophy-badge {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 6px 15px;
+    display: inline-flex;
+    gap: 6px;
+}
+
+.trophy-count { 
+    color: var(--cr-gold); 
+    font-weight: bold; 
+}
+
+.erro-mensagem {
+    color: #ff4a4a;
+    font-weight: bold;
+    grid-column: 1 / -1;
+    text-align: center;
+}
+.arena-img {
+    width: 110%;
+    /* Altere o valor abaixo (ex: 120px ou 100px) se quiser ainda menor */
+    max-width: 130px; 
+    height: auto;
+    margin: 25px auto 10px auto;
+    display: block;
+    object-fit: contain;
+    /* Deixa a imagem com uma sombra bonita que combina com o jogo */
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.6)); 
+}
+
