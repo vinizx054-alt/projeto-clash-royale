@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash Royale - Arenas Offline</title>
+    <!-- 1. Aqui chamamos o seu arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Estrada dos Troféus</h1>
+        <p>Funcionando 100% Offline (Carregado direto por script local)</p>
+    </header>
+
+    <div class="container" id="arenas-container">
+        <!-- O JavaScript vai injetar as arenas e as fotos aqui dentro -->
+    </div>
+
+    <!-- 2. Aqui chamamos o seu arquivo de dados JavaScript -->
+    <script src="./arenas.js"></script>
+
+    <script>
+        const container = document.getElementById('arenas-container');
+
+        function renderizarArenas() {
+            // Verifica se a variável do arquivo arenas.js existe
+            if (typeof arenasData !== 'undefined') {
+                arenasData.forEach(arena => {
+                    const card = document.createElement('div');
+                    card.className = 'arena-card';
+                    
+                    // 3. ABAIXO: A mágica que chama a foto dinamicamente usando o ID da arena
+                    card.innerHTML = `
+                        <div class="arena-id">#${arena.id}</div>
+                        
+                        <img class="arena-img" 
+                             src="./imagens/${arena.id}.png" 
+                             alt="${arena.name}" 
+                             onerror="this.onerror=null; this.src='https://placehold.co';">
+                        
+                        <div class="arena-name">${arena.name}</div>
+                        <div class="trophy-badge">
+                            <span>🏆</span>
+                            <span class="trophy-count">${arena.min_trophies.toLocaleString('pt-BR')}+</span>
+                        </div>
+                    `;
+                    
+                    container.appendChild(card);
+                });
+            } else {
+                container.innerHTML = `<p class="erro-mensagem">Erro: Os dados das arenas não foram carregados corretamente.</p>`;
+            }
+        }
+
+        // Executa assim que a página carregar
+        window.addEventListener('DOMContentLoaded', renderizarArenas);
+    </script>
+</body>
+</html>
